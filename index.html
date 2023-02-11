@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment</title>
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <h2 style="align-items: center; margin-left: 50px">
+        Movie Library Assignment
+      </h2>
+      <br />
+      <h4 style="margin-left: 10px;">1)Movie list</h4>
+      <label>Title</label>
+      <input type="text" id="title" placeholder="title" />
+      <label>Genre</label>
+      <input type="text" id="genre" placeholder="genre" />
+      <button id="search">Search</button>
+      <button onclick="sortByTitle()">sortByTitle</button>
+      <button onclick="sortByGenre()">sortByGenre</button>
+      <ul id="results"></ul>
+    </div>
+    <div style="margin: 10px" >
+      <h4>2)The count of movies</h4>
+      <ul id="count"></ul>
+    </div>
+
+    <div class="container" style="margin-top: 10px;">
+      <button class="btn" id="btn">
+        Dropdown
+        <i class="bx bx-chevron-down" id="arrow"></i>
+      </button>
+
+      <div class="dropdown" id="dropdown">
+        <a href="" id="drTitle">
+          <i class="bx bx-plus-circle"></i>
+          Title
+        </a>
+        <a href="" id="drGenre">
+          <i class="bx bx-book"></i>
+          Genre
+        </a>
+        <a href="" id="drBoth">
+          <i class="bx bx-folder"></i>
+          Both
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
