@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Info</title>
+  </head>
+  <body>
+    <h3>Movie info</h3>
+    <div id="search">
+      <input type="text" id="input" placeholder="search here" />
+      <button id="btn">Search</button>
+    </div>
+    <div id="results" style="padding: 20px"></div>
+    <script>
+      let input=document.getElementById('input')
+      let btn=document.getElementById('btn');
+      let results=document.getElementById('results');
+
+      btn.addEventListener('click',function(){
+          let inputValue=input.value;
+          let apikey='107c0ff6';
+          let url=`http://www.omdbapi.com/?apikey=${apikey}&t=${inputValue}`;
+          const img=`http://www.omdbapi.com/?apikey=${apikey}&`;
+
+          fetch(url)
+          .then((response)=>response.json())
+          .then((res)=>{
+              const movie=res;
+              const posturl=`${img}&t=${movie.imdbID}`;
+
+              const html=`<div>
+          
+                  <img src=${movie.Poster} alt='Poster'>
+                  <p>Released in ${movie.Year}</p>
+                  <p>IMDB Rating ${movie.imdbRating}</p>
+                  <p>Cast in ${movie.Actors}</p>
+                  <p>Director by ${movie.Director}</p>
+                  <div/>`;
+
+                  results.innerHTML=html;
+          })
+      })
+    </script>
+  </body>
+</html>
